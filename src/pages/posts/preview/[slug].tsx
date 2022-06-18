@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useSession } from "next-auth/react";
 import Link from "next/dist/client/link";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { RichText } from "prismic-dom";
 import { useEffect } from "react";
@@ -22,8 +22,6 @@ export default function PostPreview({ post }: PostPreviewProps) {
    const router = useRouter();
 
    useEffect(() => {
-      console.log(session)
-
       if (session?.activeSubscription) {
          router.push(`/posts/${post.slug}`);
       }
