@@ -7,6 +7,7 @@ import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
    // Configure one or more authentication providers
+   secret: '4bd6bd9dfb9e86fa4c2c82a01f8c0d28',
    providers: [
       GithubProvider({
          clientId: process.env.GITHUB_CLIENT_ID,
